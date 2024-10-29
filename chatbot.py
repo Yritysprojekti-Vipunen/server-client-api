@@ -179,10 +179,17 @@ class ChatBot:
 
         return completion.choices[0].message.content
 
-    def prompt_custom_coversation(self, system_message, messages):
+    def prompt_custom_coversation(self, system_message, other_messages):
+        messages = []
+
+        messages.extend(system_message)
+        messages.extend(other_messages)
+
+        print("\n\n\n\n\n",messages[2],"\n\n\n\n\n")
+
         completion = self.client.chat.completions.create(
             model="gpt-4o",
-            messages=[system_message, messages],
+            messages=messages,
             n=1,
             max_tokens=4096
         )

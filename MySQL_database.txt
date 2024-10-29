@@ -1,0 +1,23 @@
+CREATE DATABASE IF NOT EXISTS chatbot_message_history;
+
+USE chatbot_message_history;
+
+CREATE TABLE IF NOT EXISTS conversation_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(255),
+    message TEXT,
+    sender VARCHAR(10), -- 'user' or 'bot'
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+select DATE(timestamp), curdate() from chatbot_message_history.conversation_history;
+
+SELECT message, sender FROM conversation_history;
+
+select curdate();
+
+CREATE TABLE IF NOT EXISTS file_storage (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    file_name VARCHAR(255) NOT NULL,
+    file_data LONGBLOB NOT NULL
+);

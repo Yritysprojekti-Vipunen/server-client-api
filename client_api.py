@@ -20,7 +20,7 @@ class ClientAPI:
         self.include_routes()
 
     def hello(self):
-        return {"response": "hello"}
+        return {"response": "Server is listening."}
     
     def include_routes(self):
         self.app.include_router(self.router)
