@@ -4,7 +4,7 @@ import io
 
 # Create connection to the MySQL database
 user = "root" #Oma käyttäjätunnus
-password = "Yritysprojekti2" #Oma salasana
+password = "¤¤¤¤" #Oma salasana
 
 
 def create_connection():
